@@ -4,19 +4,53 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
         <title>CV Timothé Bequet</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>        
     </head>
     <body>
         <!-- entête du CV -->
         <header class="entete">
             <!-- titre -->
-            <h1>Développeur Web &#38; Web Mobiles</h1>
+            <h1 class="entete__titre">Développeur Web &#38; Web Mobile</h1>
         </header>
 
         <!-- corps du CV -->
         <main class="corps">
             <!-- partie 'compétences' -->
-            <section class="skills">
+            <section class="corps__skills">
+                <!-- adresse -->
+                <article class="corps__adresse">
+                    <!-- titre 'a propos' -->
+                    <h3 class="corps__a-propos">à propos</h3>
+                    <!-- liste de l'adresse -->
+                    <ul class="corps__liste-adresse">
+                        <li class="corps__liste-adresse--items padding-bas"><i class="bi bi-balloon"></i> 37 ans</li>
+                        <li class="corps__liste-adresse--items"><i class="bi bi-house"></i> 36 rue des Sports</li>
+                        <li class="corps__liste-adresse--items">Bâtiment YSER</li>
+                        <li class="corps__liste-adresse--items padding-bas">31200 Toulouse</li>
+                        <li class="corps__liste-adresse--items padding-bas"><i class="bi bi-phone-vibrate"></i> 06 30 92 21 21</li>
+                        <li class="corps__liste-adresse--items"><i class="bi bi-at"></i> tim.bequet@gmail.com</li>
+                    </ul>
+                </article>
+
+                <!-- langages maitrisés -->
+                <article class="corps__langages">
+                    <h3 class="corps__titre-langages">langages</h3>
+                    <ul class="corps__liste-langages">
+                        <li class="corps__liste-langages--items"><i class="bi bi-filetype-html"></i> HTML</li>
+                        <li class="corps__liste-langages--items"><i class="bi bi-filetype-css"></i> CSS</li>
+                        <li class="corps__liste-langages--items"><i class="bi bi-filetype-php"></i> PHP</li>
+                        <li class="corps__liste-langages--items"><i class="bi bi-filetype-js"></i> JavaScript</li>
+                        <li class="corps__liste-langages--items"><i class="bi bi-filetype-sql"></i> SQL</li>
+                        <li class="corps__liste-langages--items"><i class="bi bi-cpu"></i> C++</li>
+                    </ul>
+                </article>            
+            </section>
+
+            <!-- partie études -->
+            <section class="etudes">
 
             </section>
 
