@@ -1,5 +1,12 @@
+/* --------------- */
+/* STYLES GENERAUX */
+/* --------------- */
 body {
     background-color: rgb(43, 80, 112);
+}
+
+ul {
+    padding-left: 0;
 }
 
 /* --------------- */
@@ -44,7 +51,7 @@ body {
 
 .corps__skills {
     width: 33%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 2rem 1rem 2rem 2rem;
     border-right: 1px solid gray;
 }
@@ -53,6 +60,19 @@ body {
     display: flex;
     flex-direction: column;
     padding: 2rem 2rem 2rem 1rem;
+}
+
+.corps__liste-adresse--items, .corps__liste-langages--items {
+    line-height: 1.7rem;
+}
+
+.corps__liste-adresse--items:nth-child(1) {
+    margin-bottom: 0.5rem;
+}
+
+.corps__liste-adresse--items:nth-child(3), 
+.corps__liste-adresse--items:nth-child(4) {
+    padding-left: 1.25rem;
 }
 
 /* ---------- */
