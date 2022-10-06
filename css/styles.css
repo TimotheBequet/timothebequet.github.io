@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(43, 80, 112);
+}
+
+/* --------------- */
+/* wrapper général */
+/* --------------- */
+.wrapper {
+    width: 90%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ------------ */
+/* entête du CV */
+/* ------------ */
+.entete {
+    text-align: center;
+    background-color: rgb(94, 93, 93);
+    color: rgb(191, 191, 191);
+    margin: 0;
+    padding: 1em 2em;
+}
+
+.entete__titre {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-shadow: #000 1px 0 10px;
+}
+
+.separateur {
+    margin: 0 20px;
+}
+
+/* ----------- */
+/* corps du CV */
+/* ----------- */
+.corps {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.corps__skills {
+    width: 33%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem 1rem 2rem 2rem;
+    border-right: 1px solid gray;
+}
+
+.corps__principal {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 2rem 1rem;
+}
+
+/* ---------- */
+/* pied du CV */
+/* ---------- */
+.pied {
+    padding: 3em;
+}
