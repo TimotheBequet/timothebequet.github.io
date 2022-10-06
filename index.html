@@ -8,13 +8,14 @@
         <link rel="stylesheet" href="css/styles.css">
         <title>CV Timothé Bequet</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- entête du CV -->
         <header class="entete">
             <!-- titre -->
             <h1 class="entete__titre">Développeur Web &#38; Web Mobile</h1>
+            <h4 class="entete__contact"><i class="bi bi-phone-vibrate"></i> 06 30 92 21 21 - <i class="bi bi-at"></i> tim.bequet@gmail.com</h4>
         </header>
 
         <!-- corps du CV -->
@@ -24,21 +25,19 @@
                 <!-- adresse -->
                 <article class="corps__adresse">
                     <!-- titre 'a propos' -->
-                    <h3 class="corps__a-propos">à propos</h3>
+                    <h3 class="corps__a-propos titre">à propos</h3>
                     <!-- liste de l'adresse -->
                     <ul class="corps__liste-adresse">
                         <li class="corps__liste-adresse--items padding-bas"><i class="bi bi-balloon"></i> 37 ans</li>
                         <li class="corps__liste-adresse--items"><i class="bi bi-house"></i> 36 rue des Sports</li>
                         <li class="corps__liste-adresse--items">Bâtiment YSER</li>
                         <li class="corps__liste-adresse--items padding-bas">31200 Toulouse</li>
-                        <li class="corps__liste-adresse--items padding-bas"><i class="bi bi-phone-vibrate"></i> 06 30 92 21 21</li>
-                        <li class="corps__liste-adresse--items"><i class="bi bi-at"></i> tim.bequet@gmail.com</li>
                     </ul>
                 </article>
 
                 <!-- langages maitrisés -->
                 <article class="corps__langages">
-                    <h3 class="corps__titre-langages">langages</h3>
+                    <h3 class="corps__titre-langages titre">langages</h3>
                     <ul class="corps__liste-langages">
                         <li class="corps__liste-langages--items"><i class="bi bi-filetype-html"></i> HTML</li>
                         <li class="corps__liste-langages--items"><i class="bi bi-filetype-css"></i> CSS</li>
@@ -52,17 +51,111 @@
 
             <!-- partie études -->
             <section class="etudes">
-
+                <h3 class="etudes__titre titre">études</h3>
+                <ul class="etudes__liste">
+                    <li class="etudes__items">
+                        <ul class="etudes__items--liste-detail">
+                            <li class="etudes____items--liste-detail-date">septembre 2022 - mars 2023</li>
+                            <li class="etudes____items--liste-detail-cursus">Titre Professionnel Développeur Web &#38; Web Mobile</li>
+                            <li class="etudes____items--liste-detail-ecole">Ecole O'Clock</li>
+                        </ul>
+                    </li>
+                    <li class="etudes__items">
+                        <ul class="etudes__items--liste-detail">
+                            <li class="etudes____items--liste-detail-date">2009-2012</li>
+                            <li class="etudes____items--liste-detail-cursus">DUT Informatique en cours du soir</li>
+                            <li class="etudes____items--liste-detail-ecole">IUT Paul Sabatier</li>
+                        </ul>
+                    </li>
+                    <li class="etudes__items">
+                        <ul class="etudes__items--liste-detail">
+                            <li class="etudes____items--liste-detail-date">2006-2007</li>
+                            <li class="etudes____items--liste-detail-cursus">Licence Pro. Gestion de Projets Urbains</li>
+                            <li class="etudes____items--liste-detail-ecole">IUT d’Aix-en-Provence</li>
+                        </ul>
+                    </li>
+                    <li class="etudes__items">
+                        <ul class="etudes__items--liste-detail">
+                            <li class="etudes____items--liste-detail-date">2004-2006</li>
+                            <li class="etudes____items--liste-detail-cursus">DEUG Géographie et Aménagement</li>
+                            <li class="etudes____items--liste-detail-ecole">Université Toulouse Jean Jaurès</li>
+                        </ul>
+                    </li>
+                    <li class="etudes__items">
+                        <ul class="etudes__items--liste-detail">
+                            <li class="etudes____items--liste-detail-date">2003-2004</li>
+                            <li class="etudes____items--liste-detail-cursus">1ère année DEUG Arts du Spectacle</li>
+                            <li class="etudes____items--liste-detail-ecole">Université Montpellier III</li>
+                        </ul>
+                    </li>
+                    <li class="etudes__items">
+                        <ul class="etudes__items--liste-detail">
+                            <li class="etudes____items--liste-detail-date">2003</li>
+                            <li class="etudes____items--liste-detail-cursus">Baccalauréat série ES</li>
+                            <li class="etudes____items--liste-detail-ecole">Lycée Polyvalent Rive Gauche</li>
+                        </ul>
+                    </li>
+                </ul>
             </section>
 
             <!-- partie 'expériences' -->
             <section class="experiences">
-
+                <h3 class="experiences__titre titre">expériences professionnelles</h3>
+                <ul class="experiences__liste">
+                    <li class="experiences__item">
+                        <ul class="experiences__item--liste">
+                            <li class="experiences__item--liste-date">2012-2022</li>
+                            <li class="experiences__item--liste-poste">Analyste Développeur C++</li>
+                            <li class="experiences__item--liste-entreprise">Technic-Soft, Toulouse</li>
+                            <p class="experiences__item--liste-description">Développement d’un logiciel de SAV en C++ (client principal : Carrefour
+                                France) au sein d’une équipe de 6 développeurs (conception, tests, corrections, optimisations)</p>
+                        </ul>
+                    </li>
+                    <li class="experiences__item">
+                        <ul class="experiences__item--liste">
+                            <li class="experiences__item--liste-date">2010-2012</li>
+                            <li class="experiences__item--liste-poste">Employé de Service</li>
+                            <li class="experiences__item--liste-entreprise">Sodexo, Airbus Central Entity, Blagnac</li>
+                            <p class="experiences__item--liste-description"></p>
+                        </ul>
+                    </li>
+                    <li class="experiences__item">
+                        <ul class="experiences__item--liste">
+                            <li class="experiences__item--liste-date">2007-2008</li>
+                            <li class="experiences__item--liste-poste">Préparateur de Commandes</li>
+                            <li class="experiences__item--liste-entreprise">Roldan, Colomiers</li>
+                            <p class="experiences__item--liste-description"></p>
+                        </ul>
+                    </li>
+                    <li class="experiences__item">
+                        <ul class="experiences__item--liste">
+                            <li class="experiences__item--liste-date">été 2007</li>
+                            <li class="experiences__item--liste-poste">Stage, Chargé d'études</li>
+                            <li class="experiences__item--liste-entreprise">Office Municipal des Sports, Aix-en-Provence</li>
+                            <p class="experiences__item--liste-description">Réalisation d’un état des lieux des installations sportives dans l’aire urbaine
+                                aixoise, en vue d’un projet d’uniformisation de l’accès au sport dans la communauté d’agglomération d’Aix-en-Provence</p>
+                        </ul>
+                    </li>
+                    <li class="experiences__item">
+                        <ul class="experiences__item--liste">
+                            <li class="experiences__item--liste-date">2006-2007</li>
+                            <li class="experiences__item--liste-poste">Stage, Chargé d'études</li>
+                            <li class="experiences__item--liste-entreprise">Mairie de La Ciotat</li>
+                            <p class="experiences__item--liste-description">Réalisation d’un état des lieux des équipements culturels de la ville de La
+                                Ciotat, en vue de la création d’un centre culturel</p>
+                        </ul>
+                    </li>
+                </ul>
             </section>
 
             <!-- partie loisirs, perso... -->
             <section class="perso">
-
+                <h3 class="perso__titre titre">Loisirs et centres d'intérêt</h3>
+                <ul class="perso__liste">
+                    <li class="perso__items"><i class="bi bi-trophy"></i> badminton (pratique intensive en compétition depuis 1992)</li>
+                    <li class="perso__items"><i class="bi bi-camera-reels"></i> cinéma</li>
+                    <li class="perso__items"><i class="bi bi-camera"></i> photographie</li>
+                </ul>
             </section>
         </main>
 
