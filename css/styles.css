@@ -1,8 +1,10 @@
 /* --------------- */
 /* STYLES GENERAUX */
 /* --------------- */
-html {
+html, body {
+    margin: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -82,6 +84,23 @@ body {
 
 .separateur {
     margin: 0 20px;
+}
+
+.slide__corps {
+    margin: 1rem;
+}
+
+/* image du CV */
+.slide__img {
+    height: 17%;
+    width: 17%;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.slide__texte {
+    text-align: justify;
 }
 
 /* ---------- */
