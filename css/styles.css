@@ -1,83 +1,89 @@
 /* --------------- */
 /* STYLES GENERAUX */
 /* --------------- */
-body {
-    background-color: rgb(43, 80, 112);
+html {
+    height: 100%;
 }
 
-ul {
-    padding-left: 0;
+body {
+    background-color: rgb(226, 226, 226);
+    height: inherit;
 }
 
 /* --------------- */
 /* wrapper général */
 /* --------------- */
 .wrapper {
-    width: 90%;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.6);
+    height: inherit; 
+    overflow: hidden;
 }
 
 /* ------------ */
 /* entête du CV */
 /* ------------ */
 .entete {
-    text-align: center;
-    background-color: rgb(94, 93, 93);
-    color: rgb(191, 191, 191);
+    box-shadow: 0px 0px 40px rgb(161, 160, 160);
+}
+
+
+/* ----------- */
+/* corps du CV */
+/* ----------- */
+.conteneur-slides {
+    height: inherit;
+    display: flex;  
+    position: relative; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide {
+    width: 75%;
+    height: 70%;    
+    transition: all 0.7s;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 0px 40px rgb(161, 160, 160);
+}
+
+.inactive {
+    display: none;
+}
+
+#me {
+    z-index: 3;    
+}
+
+#skills {
+    z-index: 2;
+}
+
+#studies {
+    z-index: 1;
+}
+
+#portfolio {
+    z-index: 0;
+}
+
+.slide__entete {
+    text-align: center;    
     margin: 0;
     padding: 1em 2em;
 }
 
-.entete__titre {
+.slide__entete--titre {
     font-size: 50px;
     font-weight: bold;
-    margin-bottom: 3rem;
-    text-shadow: #000 1px 0 10px;
+    margin-bottom: 2rem;
+    text-shadow: rgb(110, 110, 110) 1px 0 10px;
 }
 
 .separateur {
     margin: 0 20px;
 }
 
-/* ----------- */
-/* corps du CV */
-/* ----------- */
-.corps {
-    display: flex;
-    flex-direction: row;
-    
-}
-
-.corps__skills {
-    width: 33%;
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 2rem 1rem 2rem 2rem;
-    border-right: 1px solid gray;
-}
-
-.corps__principal {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 2rem 2rem 1rem;
-}
-
-.corps__liste-adresse--items, .corps__liste-langages--items {
-    line-height: 1.7rem;
-}
-
-.corps__liste-adresse--items:nth-child(1) {
-    margin-bottom: 0.5rem;
-}
-
-.corps__liste-adresse--items:nth-child(3), 
-.corps__liste-adresse--items:nth-child(4) {
-    padding-left: 1.25rem;
-}
-
 /* ---------- */
 /* pied du CV */
 /* ---------- */
-.pied {
-    padding: 3em;
-}
