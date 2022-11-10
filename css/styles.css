@@ -1,4 +1,15 @@
 /* --------------- */
+/*    VARIABLES    */
+/* --------------- */
+:root {
+    --color-theme-me: 0, 217, 255;
+    --color-theme-skills: 255, 0, 212;
+    --color-theme-cursus: 19, 228, 0;
+    --color-theme-portfolio: 255, 0, 0;
+    --color-theme-contact: 128, 128, 128;
+}
+
+/* --------------- */
 /* STYLES GENERAUX */
 /* --------------- */
 html, body {
@@ -8,8 +19,22 @@ html, body {
 }
 
 body {
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(226, 226, 226);    
     height: inherit;
+}
+
+body::after {
+    content: "";
+    background-image: url(../images/html.jpg);
+    background-size: cover;
+    background-position: center;    
+    opacity: 0.15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;       
 }
 
 /* --------------- */
@@ -27,6 +52,58 @@ body {
     box-shadow: 0px 0px 40px rgb(161, 160, 160);
 }
 
+.navbar {
+    padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+
+.current-nav {
+    text-shadow: rgb(150, 150, 150) 0 0 10px;
+}
+
+.current-nav:nth-child(1) {
+    color: rgb(var(--color-theme-me));
+}
+
+.navbar-brand:nth-child(1):hover {
+    box-shadow: 0px 0px 20px rgba(var(--color-theme-me), 0.3);
+}
+
+.current-nav:nth-child(2) {
+    color: rgb(var(--color-theme-skills));
+}
+
+.navbar-brand:nth-child(2):hover {
+    box-shadow: 0px 0px 20px rgba(var(--color-theme-skills), 0.3);
+}
+
+.current-nav:nth-child(3) {
+    color: rgb(var(--color-theme-cursus));
+}
+
+.navbar-brand:nth-child(3):hover {
+    box-shadow: 0px 0px 20px rgba(var(--color-theme-cursus), 0.3);
+}
+
+.current-nav:nth-child(4) {
+    color: rgb(var(--color-theme-portfolio));
+}
+
+.navbar-brand:nth-child(4):hover {
+    box-shadow: 0px 0px 20px rgba(var(--color-theme-portfolio), 0.3);
+}
+
+.current-nav:nth-child(5) {
+    color: rgb(var(--color-theme-contact));
+}
+
+.navbar-brand:nth-child(5):hover {
+    box-shadow: 0px 0px 20px rgba(var(--color-theme-contact), 0.5);
+}
 
 /* ----------- */
 /* corps du CV */
@@ -94,7 +171,6 @@ body {
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 2rem;
-    text-shadow: rgb(110, 110, 110) 1px 0 10px;
 }
 
 .separateur {
@@ -116,6 +192,26 @@ body {
 
 .slide__texte {
     text-align: justify;
+}
+
+.letter-blue {
+    color: rgb(var(--color-theme-me));
+}
+
+.letter-pink {
+    color: rgb(var(--color-theme-skills));
+}
+
+.letter-green {
+    color: rgb(var(--color-theme-cursus));
+}
+
+.letter-red {
+    color: rgb(var(--color-theme-portfolio));
+}
+
+.letter-gray {
+    color: rgb(var(--color-theme-contact));
 }
 
 /* ---------- */
