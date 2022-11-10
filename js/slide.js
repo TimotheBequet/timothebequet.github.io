@@ -2,6 +2,7 @@ const slide = {
     isTransitionTerminated: true,
     init: function() {
         document.addEventListener('wheel', slide.handleWheelMouse);
+        document.addEventListener('touchmove', slide.handleWheelMouse);
     },
 
     handleWheelMouse: function(event) {
