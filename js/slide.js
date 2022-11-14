@@ -1,8 +1,16 @@
 const slide = {
     isTransitionTerminated: true,
     init: function() {
+        // affectation évènement du mouvement de la molette de la souris
+        // qui ne se déclenche que sur les slides de la page
         document.addEventListener('wheel', slide.handleWheelMouse);
-        document.addEventListener('touchmove', slide.handleWheelMouse);
+        // récupération de tous les éléments du menu de navigation
+        let navMenuElements = document.getElementsByClassName('navbar-brand');
+        // on boucle dessus
+        for (let i = 0; i < navMenuElements.length; i++) {
+            // on affecte un élément click à chaque élément du menu
+            navMenuElements[i].addEventListener('click', slide.handleClickNav);
+        }
     },
 
     handleWheelMouse: function(event) {
@@ -45,7 +53,7 @@ const slide = {
         return window.getComputedStyle(element).getPropertyValue('opacity');
     },
 
-    nextSlide: function(element) {
+    nextSlide: function(element, blGereNavbar=true) {
         element.classList.remove('current-slide');
         element.classList.add('zoomed');
         let nextElement = element.nextElementSibling;  
@@ -55,10 +63,13 @@ const slide = {
             }, 2000);
             nextElement.classList.remove('unzoomed');
             nextElement.classList.add('current-slide');
+            if (blGereNavbar)
+                slide.changeSelectionNavElement(nextElement);
         }
+        return nextElement;        
     },
 
-    previousSlide: function(element) {
+    previousSlide: function(element, blGereNavbar=true) {
         element.classList.remove('current-slide');
         element.classList.add('unzoomed');
         let previousElement = element.previousElementSibling;
@@ -66,10 +77,60 @@ const slide = {
             previousElement.classList.remove('inactive'); 
             setTimeout(() => {           
                 previousElement.classList.remove('zoomed');  
-                previousElement.classList.add('current-slide');                      
-            }, 1);                    
+                previousElement.classList.add('current-slide');
+                if (blGereNavbar)
+                    slide.changeSelectionNavElement(previousElement);                  
+            }, 1);                                
         }
-    },    
+        return previousElement;
+    }, 
+    
+    changeSelectionNavElement: function(element) {
+        document.getElementsByClassName('current-nav')[0].classList.remove('current-nav');
+        const idNextElement = element.id;
+        const idNavElement = 'nav-' + idNextElement;
+        const navElement = document.getElementById(idNavElement);
+        if (navElement !== null) {
+            navElement.classList.add('current-nav');
+        }        
+    },
+
+    handleClickNav: function(event) {
+        // on récupère l'id de l'élément cliqué
+        const idElementClicked = event.target.id;
+        // on récupère l'id de la slide correspondante
+        const idSlide = idElementClicked.replace('nav-', '');
+        // on récupère l'élément slide à laquelle on doit aller
+        const slideToGo = document.getElementById(idSlide);
+        const positionSlideToGo = slide.getPositionSlide(slideToGo);
+        // on récupère aussi l'élément slide courante
+        let currentSlide = document.getElementsByClassName('current-slide')[0];
+        let positionCurrentSlide = slide.getPositionSlide(currentSlide);
+        if (currentSlide !== null && slideToGo !== null) { 
+            if (positionSlideToGo > positionCurrentSlide) {
+                do {
+                    currentSlide = slide.nextSlide(currentSlide);
+                    positionCurrentSlide++;
+                } while (positionCurrentSlide < positionSlideToGo);
+            } else {
+                do {
+                    currentSlide = slide.previousSlide(currentSlide);
+                    positionCurrentSlide--;
+                } while (positionCurrentSlide > positionSlideToGo);
+            }
+        }                
+    },
+
+    getPositionSlide: function(uneSlide) {
+        const arraySlides = document.getElementsByClassName('slide');
+        let position = 0;
+        for (let i = 0; i < arraySlides.length && position === 0; i++) {
+            if (arraySlides[i] === uneSlide) {
+                position = i+1;
+            }
+        }
+        return position-1;
+    }
 };
 
 document.addEventListener('DOMContentLoaded', slide.init);
