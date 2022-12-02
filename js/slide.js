@@ -99,7 +99,7 @@ const slide = {
             // après 2 seconde, on lui affecte la classe 'inactive' pour lui donner un display:none            
             setTimeout(() => {           
                 element.classList.add('inactive');
-            }, 2000);
+            }, 1500);
             // on enlève la classe 'unzoomed' à l'élément suivant pour lui donner un scale de 1
             nextElement.classList.remove('unzoomed');
             // et on lui donne la classe 'current-slide'

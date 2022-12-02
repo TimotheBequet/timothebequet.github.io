@@ -3,9 +3,9 @@
 /* --------------- */
 :root {
     --color-theme-me: 0, 217, 255;
-    --color-theme-skills: 255, 0, 212;
+    --color-theme-portfolio: 255, 0, 212;
     --color-theme-cursus: 19, 228, 0;
-    --color-theme-portfolio: 255, 0, 0;
+    --color-theme-skills: 255, 0, 0;
     --color-theme-contact: 128, 128, 128;
 }
 
@@ -120,7 +120,7 @@ body::after {
 .slide {
     width: 75%;
     height: 70%;    
-    transition: all 2s;
+    transition: all 1.5s;
     position: absolute;
     background-color: #fff;
     box-shadow: 0px 0px 40px rgb(161, 160, 160);
@@ -212,6 +212,21 @@ body::after {
 
 .letter-gray {
     color: rgb(var(--color-theme-contact));
+}
+
+/* ------ */
+/* SKILLS */
+/* ------ */
+.slide__corps-skills-container-progress {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+    margin: auto 2rem;
+}
+
+.slide__corps-skills-lang {
+    margin-bottom: 0;
+    padding: 1rem;
 }
 
 /* ---------- */
