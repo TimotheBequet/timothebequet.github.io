@@ -9,6 +9,13 @@
     --color-theme-contact: 128, 128, 128;
 }
 
+@font-face {
+    font-family: 'Menlo Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Menlo Regular'), url('../fonts/Menlo-Regular.woff') format('woff');
+    }
+
 /* --------------- */
 /* STYLES GENERAUX */
 /* --------------- */
@@ -241,9 +248,11 @@ body::after {
     margin: 0 2rem 0.3rem 2rem;
     padding: 0.2rem 2rem 0.2rem 2rem; 
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgb(161, 160, 160);
-    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(108, 107, 107);
+    background-color: rgb(30 30 30);
     font-size: 0.9rem;
+    color: #fff;
+    font-family: 'Menlo Regular'
 }
 
 .slide__corps-skills-container-progress:hover {
@@ -252,6 +261,31 @@ body::after {
 
 .slide__corps-skills-lang {
     margin-bottom: 0;
+}
+
+/* coloration des langages de programmation */
+.html-color-chevrons {
+    color: rgb(127 127 127);
+}
+
+.hml-color-balise {
+    color: rgb(85 153 210);
+}
+
+.css-color-class {
+    color: rgb(199 173 117);
+}
+
+.css-color-accolade {
+    color: rgb(251 213 51);
+}
+
+.css-color-property {
+    color: rgb(147 206 237);
+}
+
+.css-color-value {
+    color: rgb(206 145 120);
 }
 
 /* ---------- */
