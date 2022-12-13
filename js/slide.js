@@ -137,7 +137,7 @@ const slide = {
                 // on appelle la fonction pour mettre en surbrillance l'élément du menu
                 // correspondant à la nouvelle slide.
                 slide.changeSelectionNavElement(previousElement);                  
-            }, 1);                                
+            }, 10);                                
         }
         // on retourne la slide sur laquelle on vient de se positionner
         return previousElement;
@@ -184,7 +184,7 @@ const slide = {
         // on récupère aussi sa position
         let positionCurrentSlide = slide.getPositionSlide(currentSlide);
         // la slide courante et celle sur laquelle on veut se positionner existent bien
-        if (currentSlide !== null && slideToGo !== null) { 
+        if (currentSlide !== null && slideToGo !== null && currentSlide !== slideToGo) { 
             // si la position où on veut aller est supérieure
             // à la position où on est : faut aller sur une slide suivante
             if (positionSlideToGo > positionCurrentSlide) {

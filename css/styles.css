@@ -3,9 +3,9 @@
 /* --------------- */
 :root {
     --color-theme-me: 0, 217, 255;
-    --color-theme-portfolio: 255, 0, 212;
-    --color-theme-cursus: 19, 228, 0;
     --color-theme-skills: 255, 0, 0;
+    --color-theme-cursus: 19, 228, 0;
+    --color-theme-portfolio: 255, 0, 212;     
     --color-theme-contact: 128, 128, 128;
 }
 
@@ -26,7 +26,7 @@ html, body {
 }
 
 body {
-    background-color: rgb(226, 226, 226);    
+    background-color: rgb(82, 82, 82);    
     height: inherit;
 }
 
@@ -35,7 +35,7 @@ body::after {
     background-image: url(../images/html.jpg);
     background-size: cover;
     background-position: center;    
-    opacity: 0.15;
+    opacity: 0.25;
     top: 0;
     left: 0;
     bottom: 0;
@@ -59,57 +59,36 @@ body::after {
     box-shadow: 0px 0px 40px rgb(161, 160, 160);
 }
 
+.entete::after {
+    background-color: rgb(39, 39, 39);
+    color: #fff;
+}
+
 .navbar {
     padding: 0.75rem 1rem;
+    background-color: rgb(39, 39, 39) !important;
 }
 
 .navbar-brand {
     padding: 0.5rem 1rem;
     border-radius: 15px;
+    color: white !important;
+    transition: box-shadow 0.4s;
+}
+
+.navbar-brand:hover {
+    color: white;
+    box-shadow: 0px 0px 20px rgba(var(--clr), .5);
 }
 
 .current-nav {
+    color: rgb(var(--clr)) !important;
     text-shadow: rgb(150, 150, 150) 0 0 10px;
+    animation: glow 800ms ease-out infinite alternate;
 }
 
-.current-nav:nth-child(1) {
-    color: rgb(var(--color-theme-me));
-}
-
-.navbar-brand:nth-child(1):hover {
-    box-shadow: 0px 0px 20px rgba(var(--color-theme-me), 0.3);
-}
-
-.current-nav:nth-child(2) {
-    color: rgb(var(--color-theme-skills));
-}
-
-.navbar-brand:nth-child(2):hover {
-    box-shadow: 0px 0px 20px rgba(var(--color-theme-skills), 0.3);
-}
-
-.current-nav:nth-child(3) {
-    color: rgb(var(--color-theme-cursus));
-}
-
-.navbar-brand:nth-child(3):hover {
-    box-shadow: 0px 0px 20px rgba(var(--color-theme-cursus), 0.3);
-}
-
-.current-nav:nth-child(4) {
-    color: rgb(var(--color-theme-portfolio));
-}
-
-.navbar-brand:nth-child(4):hover {
-    box-shadow: 0px 0px 20px rgba(var(--color-theme-portfolio), 0.3);
-}
-
-.current-nav:nth-child(5) {
-    color: rgb(var(--color-theme-contact));
-}
-
-.navbar-brand:nth-child(5):hover {
-    box-shadow: 0px 0px 20px rgba(var(--color-theme-contact), 0.5);
+.current-nav:hover {
+    color: rgb(var(--clr));
 }
 
 /* ----------- */
@@ -122,15 +101,16 @@ body::after {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    color: #fff;
 }
 
 .slide {
-    width: 75%;
+    width: 80%;
     height: 85%;    
     transition: all 1.5s;
     position: absolute;
     top: 2rem;
-    background-color: #fff;
+    background-color: rgb(39, 39, 39);
     box-shadow: 0px 0px 40px rgb(161, 160, 160);
 }
 
@@ -198,6 +178,7 @@ body::after {
     border-radius: 50%;
     float: left;
     margin-right: 0.5rem;
+    box-shadow: 0px 0px 20px rgb(161, 160, 160);
 }
 
 .slide__texte {
@@ -319,3 +300,18 @@ body::after {
 /* ---------- */
 /* pied du CV */
 /* ---------- */
+
+
+/* --------- */
+/* KEYFRAMES */
+/* --------- */
+@keyframes glow {
+    0% {
+		border-color: rgb(var(--clr));
+        box-shadow: 0 0 20px rgba(var(--clr),.2);
+    }	
+    100% {
+		border-color: rgb(var(--clr));
+        box-shadow: 0 0 30px rgba(var(--clr),.6);
+    }    
+}
