@@ -14,6 +14,23 @@ const slide = {
             // on affecte un élément click à chaque élément du menu
             navMenuElements[i].addEventListener('click', slide.handleClickNav);
         }
+
+        document.addEventListener('keydown', slide.handleKeyDown);
+    },
+
+    initCheckTransitionElement: function(element) {
+        /**
+         * Bloc d'évènements permettant d'attendre qu'une transition
+         * soit terminée avant de pouvoir en lancer une autre.
+         */
+        // transitionstart est lancé au début de la transition : on bloque le zoom/dezoom sur d'autres éléments
+        element.addEventListener('transitionstart', () => {slide.isTransitionTerminated = false;});
+        // transitionrun est lancé pendant que la transition est en cours : on bloque le zoom/dezoom sur d'autres éléments
+        element.addEventListener('transitionrun', () => {slide.isTransitionTerminated = false;});
+        // transitioncancel est lancé lorsqu'une transition est annulée : on libère la possibilité de zoomer/dézoomer
+        element.addEventListener('transitioncancel', () => {setTimeout(() => {slide.isTransitionTerminated = true;}, 50);});
+        // transitioncancel est lancé lorsqu'une transition est terminée : on libère la possibilité de zoomer/dézoomer
+        element.addEventListener('transitionend', () => {setTimeout(() => {slide.isTransitionTerminated = true;}, 50);});
     },
 
     /**
@@ -25,18 +42,7 @@ const slide = {
         // on récupère l'élément sous la souris au moment du scroll avec la molette
         let elementScrolled = event.target.closest('.slide');
         if (elementScrolled != null) {
-            /**
-             * Bloc d'évènements permettant d'attendre qu'une transition
-             * soit terminée avant de pouvoir en lancer une autre.
-             */
-            // transitionstart est lancé au début de la transition : on bloque le zoom/dezoom sur d'autres éléments
-            elementScrolled.addEventListener('transitionstart', () => {slide.isTransitionTerminated = false;});
-            // transitionrun est lancé pendant que la transition est en cours : on bloque le zoom/dezoom sur d'autres éléments
-            elementScrolled.addEventListener('transitionrun', () => {slide.isTransitionTerminated = false;});
-            // transitioncancel est lancé lorsqu'une transition est annulée : on libère la possibilité de zoomer/dézoomer
-            elementScrolled.addEventListener('transitioncancel', () => {setTimeout(() => {slide.isTransitionTerminated = true;}, 50);});
-            // transitioncancel est lancé lorsqu'une transition est terminée : on libère la possibilité de zoomer/dézoomer
-            elementScrolled.addEventListener('transitionend', () => {setTimeout(() => {slide.isTransitionTerminated = true;}, 50);});
+            slide.initCheckTransitionElement(elementScrolled);
             if (slide.isTransitionTerminated) {
                 // transition terminée : on peut de nouveau lancer une transition
                 slide.zoomDezoomElement(elementScrolled, event.deltaY);
@@ -250,6 +256,26 @@ const slide = {
             }
         }
         return position-1;
+    },
+
+    /**
+     * Permet de capturer lorsqu'on appuie sur une touche du clavier
+     * @param {*} event 
+     */
+    handleKeyDown: function(event) {
+        // on récupère l'élément sous la souris au moment du scroll avec la molette
+        let element = document.querySelector('.current-slide');
+        if (element != null) { 
+            slide.initCheckTransitionElement(element);
+            if (slide.isTransitionTerminated) {
+                if (event.keyCode == 38 && !element.classList.contains('first')) {                
+                    slide.previousSlide(element);
+                }
+                if (event.keyCode == 40 && !element.classList.contains('last')) {
+                    slide.nextSlide(element);
+                }
+            }
+        }
     }
 };
 
