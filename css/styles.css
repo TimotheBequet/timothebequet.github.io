@@ -211,7 +211,7 @@ body::after {
 /* ------ */
 /* SKILLS */
 /* ------ */
-.slde__entete-skills {
+.slide__entete-skills {
     height: 15%;
     margin: 0;
 }
@@ -244,7 +244,7 @@ body::after {
 
 .slide__corps-skills-container-progress:hover {
     box-shadow: 0px 0px 10px rgba(var(--color-theme-skills), 0.7);
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .slide__corps-skills-lang {
@@ -302,19 +302,25 @@ body::after {
     color: rgb(197, 134, 192);
 }
 
-/* -------------------------- */
-/* Fleches de navigation DOWN */
-/* -------------------------- */
-
-.container {
+/* ------------------------------- */
+/* Fleches de navigation UP & DOWN */
+/* ------------------------------- */
+.container-arrows {
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 0.5rem;
     right: 0.5rem;
     width: 5rem;
-    height: 10rem;    
+    height: 10rem;      
+}
+
+.container-up {
+    top: 5.5rem;
+}
+
+.container-down {
+    bottom: 1rem;  
 }
 
 .chevron {
@@ -323,15 +329,30 @@ body::after {
     height: calc(0.6rem * 0.8);
     opacity: 0;
     transform: scale(0.3);
-    animation: move-chevron 3s ease-out infinite;
 }
 
-.chevron:first-child {
-    animation: move-chevron 3s ease-out 1s infinite;
+.chevron.down {
+    animation: move-chevron-down 3s ease-out infinite;
 }
 
-.chevron:nth-child(2) {
-    animation: move-chevron 3s ease-out 2s infinite;
+.chevron.up {
+    animation: move-chevron-up 3s ease-out infinite;
+}
+
+.chevron.down:first-child {
+    animation: move-chevron-down 3s ease-out 1s infinite;
+}
+
+.chevron.down:nth-child(2) {
+    animation: move-chevron-down 3s ease-out 2s infinite;
+}
+
+.chevron.up:first-child {
+    animation: move-chevron-up 3s ease-out 1s infinite;
+}
+
+.chevron.up:nth-child(2) {
+    animation: move-chevron-up 3s ease-out 2s infinite;
 }
 
 .chevron:before,
@@ -346,19 +367,33 @@ body::after {
 
 .chevron:before {
     left: 0;
+}
+
+.chevron.up:before {
+    transform: skewY(-30deg);
+}
+
+.chevron.down:before {    
     transform: skewY(30deg);
 }
 
 .chevron:after {
     right: 0;
     width: 50%;
+}
+
+.chevron.up:after {
+    transform: skewY(30deg);
+}
+
+.chevron.down:after {
     transform: skewY(-30deg);
 }
 
-@keyframes move-chevron {
+@keyframes move-chevron-down {
     25% {
      opacity: 1;
-       }
+    }
     33.3% {
      opacity: 1;
      transform: translateY(calc(0.6rem * 3.8));
@@ -371,6 +406,28 @@ body::after {
      opacity: 0;
      transform: translateY(calc(0.6rem * 8)) scale(0.5);
     }
+}
+
+@keyframes move-chevron-up {
+    25% {
+        opacity: 1;
+    }
+    33.3% {
+    opacity: 1;
+    transform: translateY(calc(0.6rem * -3.8));
+    }
+    66.6% {
+    opacity: 1;
+    transform: translateY(calc(0.6rem * -5.2));
+    }
+    100% {
+    opacity: 0;
+    transform: translateY(calc(0.6rem * -8)) scale(0.5);
+    }
+}
+
+.hidden {
+    display: none;
 }
 
 /* ---------- */

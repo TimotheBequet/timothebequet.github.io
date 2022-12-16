@@ -34,9 +34,9 @@ const slide = {
             // transitionrun est lancé pendant que la transition est en cours : on bloque le zoom/dezoom sur d'autres éléments
             elementScrolled.addEventListener('transitionrun', () => {slide.isTransitionTerminated = false;});
             // transitioncancel est lancé lorsqu'une transition est annulée : on libère la possibilité de zoomer/dézoomer
-            elementScrolled.addEventListener('transitioncancel', () => {slide.isTransitionTerminated = true;});
+            elementScrolled.addEventListener('transitioncancel', () => {setTimeout(() => {slide.isTransitionTerminated = true;}, 50);});
             // transitioncancel est lancé lorsqu'une transition est terminée : on libère la possibilité de zoomer/dézoomer
-            elementScrolled.addEventListener('transitionend', () => {slide.isTransitionTerminated = true;});
+            elementScrolled.addEventListener('transitionend', () => {setTimeout(() => {slide.isTransitionTerminated = true;}, 50);});
             if (slide.isTransitionTerminated) {
                 // transition terminée : on peut de nouveau lancer une transition
                 slide.zoomDezoomElement(elementScrolled, event.deltaY);
@@ -61,11 +61,15 @@ const slide = {
         if (   (element.classList.contains('last') && zoom < 0 && opacityElement >= 1)
             || (element.classList.contains('first') && ((zoom > 0) || (zoom < 0 && opacityElement < 1)))
             || (!element.classList.contains('last') && !element.classList.contains('first'))                            
-           ) {
-            if (zoom > 0) {
+           ) 
+        {
+            if (zoom > 0) 
+            {
                 // zoom positif : on passe a la prochaine slide
                 slide.nextSlide(element);      
-            } else {
+            } 
+            else 
+            {
                 // zoom négatif, on passe à la slide précédente
                 slide.previousSlide(element);
             }            
@@ -96,6 +100,11 @@ const slide = {
             element.classList.remove('current-slide');
             // on lui ajoute la classe 'zoomed' pour donner un effet de zoom et de mise en transparence
             element.classList.add('zoomed'); 
+            // si l'élément actif était le 1er, 
+            // on doit rentre visible les flêches invitant à scroller vers le haut
+            if (element.classList.contains('first')) {
+                document.querySelector('.container-up').classList.remove('hidden');
+            }
             // après 2 seconde, on lui affecte la classe 'inactive' pour lui donner un display:none            
             setTimeout(() => {           
                 element.classList.add('inactive');
@@ -107,6 +116,12 @@ const slide = {
             // on appelle la fonction pour mettre en surbrillance l'élément du menu
             // correspondant à la nouvelle slide.
             slide.changeSelectionNavElement(nextElement);
+
+            // on arrive sur le dernier élément
+            // on doit masquer les flêches invitant à scroller vers le bas
+            if (nextElement.classList.contains('last')) {
+                document.querySelector('.container-down').classList.add('hidden');
+            }
         }
         // on retourne la slide sur laquelle on vient de se positionner
         return nextElement;        
@@ -126,7 +141,12 @@ const slide = {
             // on enlève la classe 'current-slide' à l'élément courant
             element.classList.remove('current-slide');
             // on lui ajoute la classe 'unzoomed' pour donner un effet d'éloignement
-            element.classList.add('unzoomed');    
+            element.classList.add('unzoomed');  
+            // si l'élément actif était le dernier, 
+            // on doit rentre visible les flêches invitant à scroller vers le haut
+            if (element.classList.contains('last')) {
+                document.querySelector('.container-down').classList.remove('hidden');
+            }              
             // on enlève la classe 'inactive" à la slide précédente pour la remettre visible                           
             previousElement.classList.remove('inactive'); 
             // on gère un timeout de 1 milliseconde pour enlever la classe 'zoomed' à l'élément précédent,
@@ -137,7 +157,13 @@ const slide = {
                 // on appelle la fonction pour mettre en surbrillance l'élément du menu
                 // correspondant à la nouvelle slide.
                 slide.changeSelectionNavElement(previousElement);                  
-            }, 10);                                
+            }, 10); 
+            
+            // on arrive sur le 1er élément
+            // on doit masquer les flêches invitant à scroller vers le bas
+            if (previousElement.classList.contains('first')) {
+                document.querySelector('.container-up').classList.add('hidden');
+            }            
         }
         // on retourne la slide sur laquelle on vient de se positionner
         return previousElement;
