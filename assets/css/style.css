@@ -248,7 +248,8 @@ a:hover {
 /* STYLE GENERAL DES SECTIONS */
 .home__title,
 .skills__title,
-.parcours__title {        
+.parcours__title,
+.portfolio__title {        
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -378,7 +379,8 @@ a:hover {
 }
 
 .skills__title,
-.parcours__title {
+.parcours__title,
+.portfolio__title {
     font-size: 4rem;
     font-family: 'Poppins', sans-serif;
 }
@@ -643,7 +645,8 @@ a:hover {
     left: 50%;
 }
 
-.parcours_timeline-item {
+.parcours_timeline-item,
+.portfolio__container-div {
     margin-bottom: 2rem;
     display: flex;
 }
@@ -676,13 +679,20 @@ a:hover {
 }
 
 .parcours__timeline-item-panel,
-.parcours__timeline-item-panel-reverse {
+.parcours__timeline-item-panel-reverse,
+.portfolio__composants-container,
+.portfolio__jeux-container {
     width: 50%;
     position: relative;
 }
 
 .parcours__timeline-panel {
     width: 93%;
+}
+
+.parcours__timeline-panel,
+.portfolio__composants,
+.portfolio__jeux {    
     border: 1px solid rgba(255, 255, 255, 0.61);
     border-radius: 10px;
     background-color: rgba(53, 53, 53, 0.6);
@@ -690,7 +700,8 @@ a:hover {
     position: relative;
 }
 
-.parcours__timeline-item-panel-reverse {
+.parcours__timeline-item-panel-reverse,
+.portfolio__jeux-container {
     display: flex;
     justify-content: flex-end;    
 }
@@ -742,4 +753,19 @@ a:hover {
 
 .parcours__timeline-panel-content {
     font-size: 1.1rem;
+}
+
+/* SECTION PORTFOLIO */
+.main__portfolio {
+    background: linear-gradient(rgb(0, 10, 53), rgb(41, 46, 0));
+    color: white;    
+}
+
+.portfolio__composants,
+.portfolio__jeux {
+    width: 97%;
+}
+
+.portfolio__container-div h3 {
+    text-align: center;
 }
