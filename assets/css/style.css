@@ -10,6 +10,10 @@
     src: local('Menlo Regular'), url('../fonts/Menlo-Regular.woff') format('woff');
     }
 
+:root {
+    --border-color: 255, 255, 255, 0.18;
+}
+
 body {
     display: flex;
     flex-direction: row;
@@ -19,6 +23,8 @@ body {
 main {
     overflow: auto;
     scroll-behavior: smooth;
+    background: linear-gradient(rgb(32, 32, 32), rgb(34, 0, 58), rgb(51, 0, 0), rgb(34, 0, 58), rgb(32, 32, 32));
+    background-attachment: local;
 }
 
 a {
@@ -69,7 +75,7 @@ a:hover {
     width: 70%;
     border-radius: 50%;
     margin: 1rem auto;
-    border: 0.5px solid rgba(255, 255, 255, 0.397);
+    border: 0.5px solid rgba(var(--border-color));
 }
 
 .menu__resume {
@@ -134,7 +140,7 @@ a:hover {
     width: 70%; 
     height: 100%;
     z-index: -1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);   
+    border-bottom: 1px solid rgba(var(--border-color));   
 }
 
 .menu__list {
@@ -156,7 +162,7 @@ a:hover {
     overflow: hidden;
     height: 5rem;
     width: 100%;
-    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    border: 0.5px solid rgba(var(--border-color));
     border-radius: 5px;
     font-weight: 500;
     font-size: 1.4rem;
@@ -249,7 +255,8 @@ a:hover {
 .home__title,
 .skills__title,
 .parcours__title,
-.portfolio__title {        
+.portfolio__title,
+.contact__title {        
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -273,7 +280,7 @@ a:hover {
 
 /* SECTION HOME */
 .main__home {
-    background: linear-gradient(rgb(32, 32, 32), rgb(34, 0, 58));
+    /* background: linear-gradient(rgb(32, 32, 32), rgb(34, 0, 58)); */
     color: white;
 }
 
@@ -292,7 +299,7 @@ a:hover {
 }
 
 .home__border-left {
-    border-left: 1px solid rgba(255, 255, 255, 0.233);
+    border-left: 1px solid rgba(var(--border-color));
     border-radius: 0 0 0 20px;    
 }
 
@@ -313,12 +320,12 @@ a:hover {
 }
 
 .home__border-left::before {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.233);
+    border-bottom: 1px solid rgba(var(--border-color));
     border-radius: 0 0 0 20px;
 }
 
 .home__border-right {
-    border-right: 1px solid rgba(255, 255, 255, 0.233);
+    border-right: 1px solid rgba(var(--border-color));
     border-radius: 0 20px 20px 0;    
 }
 
@@ -326,8 +333,8 @@ a:hover {
     height: calc(100% + 2px);
     right: -1px;
     top: -1px;
-    border-top: 1px solid rgba(255, 255, 255, 0.233);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.233);
+    border-top: 1px solid rgba(var(--border-color));
+    border-bottom: 1px solid rgba(var(--border-color));
     border-radius: 0 20px 20px 0;
 }
 
@@ -336,7 +343,7 @@ a:hover {
 }
 
 .home__border-top::before {
-    border-top: 1px solid rgba(255, 255, 255, 0.233);
+    border-top: 1px solid rgba(var(--border-color));
     border-radius: 20px 0 0 20px;
 }
 
@@ -374,13 +381,14 @@ a:hover {
 
 /* SECTION SKILLS */
 .main__skills {
-    background: linear-gradient(rgb(34, 0, 58), rgb(51, 0, 0));
+    /* background: linear-gradient(rgb(34, 0, 58), rgb(51, 0, 0)); */
     color: white;
 }
 
 .skills__title,
 .parcours__title,
-.portfolio__title {
+.portfolio__title,
+.contact__title {
     font-size: 4rem;
     font-family: 'Poppins', sans-serif;
 }
@@ -555,21 +563,21 @@ a:hover {
     height: 100%;
     width: 50%;
     background: transparent;
-    border-top: 1px solid rgb(128, 128, 128);
-    border-bottom: 1px solid rgb(128, 128, 128);;
+    border-top: 1px solid rgb(var(--border-color));
+    border-bottom: 1px solid rgb(var(--border-color));;
 }
 
 .chevron:before {
     left: 0;
     transform: skewY(-30deg);    
-    border-left: 1px solid rgb(128, 128, 128);;
+    border-left: 1px solid rgb(var(--border-color));;
 }
 
 .chevron:after {
     right: 0;
     width: 50%;
     transform: skewY(30deg);
-    border-right: 1px solid rgb(128, 128, 128);;
+    border-right: 1px solid rgb(var(--border-color));;
 }
 
 
@@ -598,7 +606,7 @@ a:hover {
 .skills__also {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(var(--border-color));
     border-radius: 20px;
     padding: 1rem 2rem;
     background-color: rgba(0, 0, 0, 0.185);
@@ -621,7 +629,7 @@ a:hover {
 
 /* SECTION PARCOURS */
 .main__parcours {
-    background: linear-gradient(rgb(51, 0, 0), rgb(0, 10, 53));
+    /* background: linear-gradient(rgb(51, 0, 0), rgb(34, 0, 58)); */
     color: white;
 }
 
@@ -663,7 +671,7 @@ a:hover {
     position: absolute;
     background-color: rgba(53, 53, 53);
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.61);
+    border: 1px solid rgba(var(--border-color));
     left: 50%;    
     margin-left: -1.5rem;
     top: 15px;
@@ -693,7 +701,7 @@ a:hover {
 .parcours__timeline-panel,
 .portfolio__composants,
 .portfolio__jeux {    
-    border: 1px solid rgba(255, 255, 255, 0.61);
+    border: 1px solid rgba(var(--border-color));
     border-radius: 10px;
     background-color: rgba(53, 53, 53, 0.6);
     padding: 1rem;
@@ -714,8 +722,9 @@ a:hover {
 .parcours__timeline-panel-poste,
 .parcours__timeline-panel-entreprise,
 .parcours__timeline-panel-spe,
-.parcours__timeline-panel-content {
-    border: 1px solid rgb(114, 114, 114);
+.parcours__timeline-panel-content,
+.portfolio-panel-content {
+    border: 1px solid rgb(var(--border-color));
     border-radius: 5px;
     padding: 0.2rem 0.5rem;    
     background-color: rgba(27, 27, 27, 0.384);
@@ -757,8 +766,11 @@ a:hover {
 
 /* SECTION PORTFOLIO */
 .main__portfolio {
-    background: linear-gradient(rgb(0, 10, 53), rgb(41, 46, 0));
     color: white;    
+}
+
+.portfolio__composants-container {
+    cursor: pointer;
 }
 
 .portfolio__composants,
@@ -768,4 +780,73 @@ a:hover {
 
 .portfolio__container-div h3 {
     text-align: center;
+}
+
+.modal-content {
+    border: 1px solid rgba(var(--border-color));
+}
+
+.modal-header {
+    border-bottom-color: rgba(var(--border-color));
+    text-transform: uppercase;  
+}
+
+.portfolio-panel {
+    width: 100%;
+}
+
+.portfolio-img {
+    padding: 0.5rem;
+    position: relative;
+    overflow: hidden; 
+    z-index: 1;   
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.portfolio-img::after {
+    content: 'Zoom Slider';
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 170%;
+    transform: translate(0, -67%);
+    transition: transform 0.3s, height 0.6s;
+    background: rgba(0, 0, 0, 0.7);
+    background-position: center;
+    background-size: cover;  
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+.portfolio-img:hover::after {
+    transform: translate(0, -170%);
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: auto;
+}
+
+.modal-img-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;    
+}
+
+.modal-img {
+    margin: 0 auto;
+}
+
+
+
+/* SECTION CONTACT */
+.main__contact {
+    color: white;    
 }
