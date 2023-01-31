@@ -78,12 +78,16 @@ a:hover {
     border: 0.5px solid rgba(var(--border-color));
 }
 
+.menu__resume,
+.modal-link {
+    color: #becbff;
+}
+
 .menu__resume {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
     align-items: center;
-    color: #becbff;
 }
 
 .menu__resume-detail-container {
@@ -701,11 +705,9 @@ a:hover {
 .parcours__timeline-panel,
 .portfolio__composants,
 .portfolio__jeux {    
-    border: 1px solid rgba(var(--border-color));
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: rgba(53, 53, 53, 0.6);
     padding: 1rem;
-    position: relative;
 }
 
 .parcours__timeline-item-panel-reverse,
@@ -842,9 +844,13 @@ a:hover {
 
 .modal-img {
     margin: 0 auto;
+    width: 80%;
+    height: auto;
 }
 
-
+.modal-link:hover {
+    color: #B36DE3;
+}
 
 /* SECTION CONTACT */
 .main__contact {
