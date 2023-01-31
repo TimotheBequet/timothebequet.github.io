@@ -333,18 +333,30 @@
           <div class="section__container portfolio__container">
             <h2 class="portfolio__title reveal">Portfolio</h2>            
             <div class="portfolio__container-div"> 
-              <div class="portfolio__composants-container" data-bs-toggle="modal" data-bs-target="#modalComponent">
+              <div class="portfolio__composants-container">
                 <div class="portfolio__composants">
-                  <h3>Composants</h3>
-                  <!-- idée : mettre des liens, et au clic dessus ça ouvre une fenêtre modale -->
-                  <div class="portfolio-panel-content portfolio-img">
-                    <img src="./assets/images/zoom_slider1.jpg" alt="">
-                  </div>
+                  <h3 class="portfolio__header">Composants</h3>
+                  <div class="portfolio-content">
+                    <div class="portfolio-panel-content portfolio-img img-slider" data-bs-toggle="modal" data-bs-target="#sliderComponent">
+                      <img src="./assets/images/zoom_slider1.jpg" alt="">
+                    </div>
+                    <div class="portfolio-panel-content portfolio-img img-3dmenu" data-bs-toggle="modal" data-bs-target="#menuComponent">
+                      <img src="./assets/images/3d_menu.jpg" alt="">
+                    </div> 
+                  </div>                 
                 </div>
               </div>
-              <div class="portfolio__jeux-container reverse">
-                <div class="portfolio__jeux">
-                  <h3>Jeux</h3>
+              <div class="portfolio__integ-container">
+                <div class="portfolio__integ">
+                  <h3 class="portfolio__header">Intégrations<br>(exercices <a class="modal-link" href="https://www.frontendmentor.io/profile/TimotheBequet" target="_blank">Frontent Mentor <i class="bi bi-link-45deg"></i></a>)</h3>
+                  <div class="portfolio-content">
+                    <div class="portfolio-panel-content portfolio-integ" data-bs-toggle="modal" data-bs-target="#integGabrielle">
+                      <img src="./assets/images/integ-gabrielle.jpg" alt="">
+                    </div>  
+                    <div class="portfolio-panel-content portfolio-integ" data-bs-toggle="modal" data-bs-target="#integQrCode">
+                      <img src="./assets/images/qr-code-component.jpg" alt="">
+                    </div>
+                  </div>                                   
                 </div>
               </div>
             </div>
@@ -372,7 +384,12 @@
 
     </footer>
 
-    <div class="modal fade" id="modalComponent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- //////////////// -->
+    <!-- FENETRES MODALES -->
+    <!-- //////////////// -->
+
+    <!-- Zoom Slider -->
+    <div class="modal fade" id="sliderComponent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content text-bg-dark">
           <div class="modal-header">
@@ -382,7 +399,6 @@
           <div class="modal-body">
             <div class="portfolio-panel">
               <div class="parcours__timeline-panel-heading">
-                <!-- <h3 class="parcours__timeline-panel-poste">Zoom Slider</h3>   -->
                 <h4 class="parcours__timeline-panel-entreprise pro">HTML - CSS - JavaScript</h4>                   
               </div>
               <div class="portfolio-panel-content">
@@ -403,6 +419,97 @@
         </div>
       </div>
     </div>
+
+    <!-- 3D Menu -->
+    <div class="modal fade" id="menuComponent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content text-bg-dark">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">3D Menu</h1>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="portfolio-panel">
+              <div class="parcours__timeline-panel-heading">
+                <h4 class="parcours__timeline-panel-entreprise pro">HTML - CSS</h4>                   
+              </div>
+              <div class="portfolio-panel-content">
+                <p>
+                  Un menu avec effet 3D sur les items.<br>
+                  Effet de recouvrement lors du passage de la souris sur les éléments du menu.
+                </p>
+                <p>
+                  <a class="modal-link" href="https://codepen.io/TimotheBequet/pen/BaPqzMX" target="_blank"><i class="bi bi-link-45deg"></i> Page CodePen.io</a><br>
+                  <a class="modal-link" href="https://github.com/TimotheBequet/3DMenu" target="_blank"><i class="bi bi-link-45deg"></i> Page GitHub</a>
+                </p>
+                <div class="modal-img-container">
+                  <img class="modal-img" src="./assets/images/3d_menu_gif.gif" alt="">
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <!-- Intégration parfum -->
+    <div class="modal fade" id="integGabrielle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content text-bg-dark">
+          <div class="modal-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>          
+          <div class="modal-body">
+            <div class="portfolio-panel">
+              <div class="parcours__timeline-panel-heading">
+                <h4 class="parcours__timeline-panel-entreprise pro">HTML - CSS</h4>                   
+              </div>
+              <div class="portfolio-panel-content">
+                <p>
+                  Intégration d'une pub pour un parfum, à partie d'une maquette donnée.<br>
+                  Responsive selon la largeur de la fenêtre (passer la souris sur l'image pour voir la version responsive).
+                </p>
+                <p>
+                  <a class="modal-link" href="https://www.frontendmentor.io/solutions/product-preview-card-component-J0S-xVhWy2" target="_blank"><i class="bi bi-link-45deg"></i> Code sur Frontend Mentor</a><br>
+                </p>
+                <div class="modal-img-container">
+                  <div class="img-container img-gabrielle"></div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+    <!-- Intégration QRCode -->
+    <div class="modal fade" id="integQrCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content text-bg-dark">
+          <div class="modal-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>          
+          <div class="modal-body">
+            <div class="portfolio-panel">
+              <div class="parcours__timeline-panel-heading">
+                <h4 class="parcours__timeline-panel-entreprise pro">HTML - CSS</h4>                   
+              </div>
+              <div class="portfolio-panel-content">
+                <p>
+                  Intégration d'un QrCode, à partir d'une maquette donnée.
+                </p>
+                <p>
+                  <a class="modal-link" href="https://www.frontendmentor.io/solutions/qr-code-component-7RikvtH9Ya" target="_blank"><i class="bi bi-link-45deg"></i> Code sur Frontend Mentor</a><br>
+                </p>
+                <div class="modal-img-container">
+                  <div class="img-container img-qrcode"></div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>       
 
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/scrollspy.js"></script>
